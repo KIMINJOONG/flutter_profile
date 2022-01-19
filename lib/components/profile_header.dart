@@ -5,14 +5,12 @@ class ProfileHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
+        SizedBox(width: 20),
         _buildHeaderAvatar(),
+        SizedBox(width: 20),
         _buildHeaderProfile(),
       ],
     );
-  }
-
-  Widget _buildHeaderProfile() {
-    return SizedBox();
   }
 
   Widget _buildHeaderAvatar() {
@@ -22,6 +20,23 @@ class ProfileHeader extends StatelessWidget {
       child: CircleAvatar(
         backgroundImage: AssetImage("assets/avatar.png"),
       ),
+    );
+  }
+
+  Widget _buildHeaderProfile() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "GetinThere",
+          style: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.bold
+          ),
+        ),
+        Text("프로그래머/작가/강사", style: TextStyle(fontSize: 20)),
+        Text("데어프로그래밍", style: TextStyle(fontSize: 15)),
+      ],
     );
   }
 }
